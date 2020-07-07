@@ -1,0 +1,21 @@
+.link-container {
+  padding-bottom: 3rem;
+  height: 30px;
+  display: flex;
+  align-items: center;
+  &--link {
+    display: block;
+    height: 100%;
+    width: auto;
+    text-decoration: none;
+    color: inherit;
+  }
+  &--img {
+    height: inherit;
+    max-width: 100%;
+    vertical-align: middle;
+  }
+  &--text {
+    padding-left: 10px;
+  }
+}
