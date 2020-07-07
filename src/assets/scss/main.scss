@@ -5,8 +5,9 @@
 @import "base/reset"; // contains reset CSS ( to improve cross-browser rendering)
 @import "base/typography"; // contains font family and font sizes
 @import "base/base"; // contains html and body SCSS rules
+
 @import "layout/header"; // contains header element SCSS rules
 @import "layout/content"; // contains content element SCSS rules
-@import "components/post"; // contains post component SCSS rules
-@import "views/home"; // contains post component SCSS rules
-@import "views/post"; // contains post component SCSS rules
+
+@import "views/postings"; // contains postings view SCSS
+@import "views/postingDetails"; // contains postingDetails view SCSS
