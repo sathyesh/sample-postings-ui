@@ -9,24 +9,16 @@
       </li>
     </div>
     <div class="post-container" v-if="getPostingDetails.name">
-      <div class="post__item opacity-1">
-        <p class="post__item--title" data-test="posting-name">{{getPostingDetails.name}}</p>
-        <p
-          class="post__item--description"
-          data-test="posting-location"
-        >{{getPostingDetails.location.city}},{{getPostingDetails.location.countryName}}</p>
-      </div>
+      <app-post class="post__item opacity-1" :postObj="getPostingDetails"></app-post>
       <div class="post__item opacity-1" data-test="job-description">
-        <p class="post__item--title">{{getPostingDetails.jobAd.sections.jobDescription.title}}</p>
-        <p
-          class="post__item--description"
-          v-html="getPostingDetails.jobAd.sections.jobDescription.text"
-        ></p>
+        <p class="post__item--title">{{getPostingDetails.jobAd.sections.jobDescription.title}}
+        </p>
+        <p class="post__item--description" v-html="getPostingDetails.jobAd.sections.jobDescription.text">
+        </p>
       </div>
       <div class="post__item opacity-1" data-test="job-qualifications">
         <p class="post__item--title">{{getPostingDetails.jobAd.sections.qualifications.title}}</p>
-        <p
-          class="post__item--description"
+        <p class="post__item--description"
           v-html="getPostingDetails.jobAd.sections.qualifications.text"
         ></p>
       </div>
@@ -38,9 +30,13 @@ import { mapGetters, mapActions } from 'vuex';
 import BackIcon from '@/assets/images/back.svg';
 import router from '@/router';
 import AppConstants from '@/constants/app.constant';
+import AppPost from '@/components/AppPost.vue';
 
 export default {
   name: 'PostingDetails',
+  components: {
+    AppPost,
+  },
   data: () => ({
     url: BackIcon,
     backLinkText: AppConstants.BACK_LINK_TEXT,

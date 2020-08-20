@@ -20,21 +20,8 @@
     </div>
     <div class="post-container" v-if="!isLoading">
       <p v-if="getFilteredPostings.length === 0">{{filterSelectionErrortext}}</p>
-      <ul class="post" id="infinite-list">
-        <li
-          class="post__item post__item--animate"
-          v-for="(post,index) in getFilteredPostings"
-          :key="index"
-          @click="goToPostingDetails(post)"
-          data-test="posting"
-        >
-          <p class="post__item--title" data-test="posting-name">{{post.name}}</p>
-          <p
-            class="post__item--description"
-            data-test="posting-location"
-          >{{post.location.city}}, {{post.location.countryName}}</p>
-        </li>
-      </ul>
+      <app-posts-list :posts="getFilteredPostings" id="infinite-list" @postClicked="goToPostingDetails">
+      </app-posts-list>
     </div>
   </div>
 </template>
@@ -42,9 +29,13 @@
 <script>
 import { mapGetters, mapActions } from 'vuex';
 import AppConstants from '@/constants/app.constant';
+import AppPostsList from '@/components/AppPostsList.vue';
 
 export default {
   name: 'Postings',
+  components: {
+    AppPostsList,
+  },
   computed: {
     ...mapGetters('appLoader', ['isLoading']),
     ...mapGetters('postings', ['getFilteredPostings', 'getPostingsQueryParams', 'getCountryListFromPostings',
