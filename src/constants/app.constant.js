@@ -1,4 +1,4 @@
-const APP_TITLE = 'SmartRecruiters Postings List App';
+const APP_TITLE = 'Sample Postings List App';
 const SELECT_COUNTRY_PLACEHOLDER = 'Country';
 const SELECT_DEPARTMENT_PLACEHOLDER = 'Country';
 const FILTER_SELECTION_ERROR_TEXT = 'Job posting is not available for the selected criteria';
