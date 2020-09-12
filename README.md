@@ -1,6 +1,6 @@
 # sample-postings-ui
 
-This directory contains source code and unit tests of Sample Job Postings SPA.
+This project contains Single Page Application of job postings which is implemented using Vue, Vuex and Vue-router. For this simple application, Vuex is not needed but used it for example implementation.
 
 ## Project setup
 
